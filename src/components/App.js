@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/App.css';
 
-const App = () => {
-  const [category, setCategory] = useState("general");
-  const [newsData, setNewsData] = useState([]);
-  const [loading, setLoading] = useState();
-  
   const posts= (category)=>{
   const API_KEY="a1741280db6dbc554c889a31544851b7"
   let url=`https://gnews.io/api/v4/top-headlines?category=${category}&apikey=${API_KEY}&max=10&lang=en`;
   return fetch(url)
 }
+  
+const App = () => {
+  const [category, setCategory] = useState("general");
+  const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState();
+  
 
   useEffect(()=>{
     setLoading(true)
